@@ -1,9 +1,10 @@
-import { Container } from './styles'
+import { Container, LoginMethodsContainer, LogoContainer } from './styles'
 
 export function Login() {
   return (
     <Container>
-      <h1>Logiiiiin</h1>
+      <LogoContainer></LogoContainer>
+      <LoginMethodsContainer></LoginMethodsContainer>
     </Container>
   )
 }

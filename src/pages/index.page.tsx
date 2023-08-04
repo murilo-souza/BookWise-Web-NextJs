@@ -1,5 +1,5 @@
 import { Login } from './Login'
 
-export default function Home() {
+export default function Landing() {
   return <Login />
 }
