@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 
 export const Container = styled.aside`
   background-color: ${(props) => props.theme.colors.gray700};
@@ -13,24 +12,47 @@ export const Container = styled.aside`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   padding: 2.5rem 3.25rem;
 `
 
 export const LogoContainer = styled.div`
+  margin-bottom: 4rem;
+
   img {
     width: 8rem;
     height: 2rem;
   }
 `
-export const NavLink = styled(Link)`
+
+export const SignInButton = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 0.75rem;
 
-  text-decoration: none;
+  color: ${(props) => props.theme.colors.gray200};
 
-  color: ${(props) => props.theme.colors.gray100};
+  background: none;
+
+  border: 0;
+
+  margin-top: auto;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  padding: 0.25rem 0.5rem;
+
+  &:hover {
+    background: rgba(230, 232, 242, 0.04);
+
+    border-radius: 4px;
+  }
+
+  svg {
+    color: ${(props) => props.theme.colors.green100};
+  }
 `
