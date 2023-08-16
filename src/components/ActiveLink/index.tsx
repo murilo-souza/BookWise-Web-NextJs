@@ -11,11 +11,11 @@ interface ActiveLinkProps {
 export function ActiveLink({ children, href }: ActiveLinkProps) {
   const { asPath } = useRouter()
 
-  const isActive = href === asPath
+  const isactive = href === asPath
 
   return (
-    <NavLink isActive={isActive} href={href}>
-      {isActive && <Brick />}
+    <NavLink isactive={isactive} href={href}>
+      {isactive && <Brick />}
       {children}
     </NavLink>
   )

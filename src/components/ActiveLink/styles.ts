@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
 interface StyledLinkProps {
-  isActive: boolean
+  isactive: boolean
 }
 
 export const NavLink = styled(Link)<StyledLinkProps>`
@@ -31,8 +31,8 @@ export const NavLink = styled(Link)<StyledLinkProps>`
     border-radius: 4px;
   }
 
-  ${({ isActive }) =>
-    isActive &&
+  ${({ isactive }) =>
+    isactive &&
     css`
       color: ${(props) => props.theme.colors.gray100};
       font-weight: bold;
