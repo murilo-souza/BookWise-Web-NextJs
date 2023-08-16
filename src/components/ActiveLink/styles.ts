@@ -6,7 +6,7 @@ interface StyledLinkProps {
 }
 
 export const NavLink = styled(Link)<StyledLinkProps>`
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 
   display: flex;
   align-items: center;
@@ -21,6 +21,14 @@ export const NavLink = styled(Link)<StyledLinkProps>`
 
   svg {
     margin-left: 1rem;
+  }
+
+  padding: 0.25rem;
+
+  &:hover {
+    background: rgba(230, 232, 242, 0.04);
+
+    border-radius: 4px;
   }
 
   ${({ isActive }) =>
