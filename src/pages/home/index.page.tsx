@@ -1,7 +1,8 @@
 import { Sidebar } from '@/components/Sidebar'
-import { Container, PageTitle } from './styles'
+import { Container, HeaderTitle, Header, PageTitle, Wrapper } from './styles'
 import { LastBookCard } from '@/components/LastBookCard'
-import { ChartLineUp } from '@phosphor-icons/react'
+import { CaretRight, ChartLineUp } from '@phosphor-icons/react'
+import { LastRatingCard } from '@/components/LastRatingCard'
 
 export default function Home() {
   return (
@@ -13,8 +14,21 @@ export default function Home() {
           <ChartLineUp />
           Inicio
         </PageTitle>
-
-        <LastBookCard />
+        <Wrapper>
+          <Header>
+            <HeaderTitle>Sua última leitura</HeaderTitle>
+            <button>
+              Ver todas <CaretRight size={16} />
+            </button>
+          </Header>
+          <LastBookCard />
+        </Wrapper>
+        <Wrapper>
+          <Header>
+            <HeaderTitle>Avaliações mais recentes</HeaderTitle>
+          </Header>
+          <LastRatingCard />
+        </Wrapper>
       </main>
     </Container>
   )

@@ -14,7 +14,7 @@ export function ActiveLink({ children, href }: ActiveLinkProps) {
   const isactive = href === asPath
 
   return (
-    <NavLink isactive={isactive} href={href}>
+    <NavLink isactive={!!isactive} href={href}>
       {isactive && <Brick />}
       {children}
     </NavLink>
