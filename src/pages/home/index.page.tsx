@@ -1,16 +1,13 @@
-import { Sidebar } from '@/components/Sidebar'
 import { Container, HeaderTitle, Header, PageTitle, Wrapper } from './styles'
 import { LastBookCard } from '@/components/LastBookCard'
 import { CaretRight, ChartLineUp } from '@phosphor-icons/react'
 import { LastRatingCard } from '@/components/LastRatingCard'
-import { useSession } from 'next-auth/react'
+import { NextPageWithLayout } from '../_app.page'
+import { DefaultLayout } from '@/layouts/DefaultLayout'
 
-export default function Home() {
-  const { data } = useSession()
+const HomePage: NextPageWithLayout = () => {
   return (
     <Container>
-      <Sidebar />
-      <div />
       <main>
         <PageTitle>
           <ChartLineUp />
@@ -36,3 +33,9 @@ export default function Home() {
     </Container>
   )
 }
+
+HomePage.getLayout = (page) => {
+  return <DefaultLayout title="Inicio">{page}</DefaultLayout>
+}
+
+export default HomePage

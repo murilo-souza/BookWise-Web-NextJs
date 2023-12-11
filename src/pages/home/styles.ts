@@ -1,12 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.main`
-  display: grid;
-  grid-template-columns: 10rem 40rem auto;
-  column-gap: 4rem;
-
-  padding: 4.5rem 6rem;
-`
+export const Container = styled.main``
 
 export const PageTitle = styled.h1`
   display: flex;

@@ -12,6 +12,7 @@ export function Sidebar() {
       <LogoContainer>
         <Image src={LogoSVG} alt="Logo" />
       </LogoContainer>
+
       <ActiveLink href="/home">
         <ChartLineUp size={24} />
         Inicio

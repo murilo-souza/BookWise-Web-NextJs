@@ -14,6 +14,7 @@ import GitHubLogo from '../../assets/github.svg'
 import VisitorLogo from '../../assets/rocket.svg'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 type AuthButtonsProps = {
   callbackUrl?: string
@@ -34,6 +35,9 @@ export function Login({ callbackUrl = '/home' }: AuthButtonsProps) {
 
   return (
     <Container>
+      <Head>
+        <title>Login | BookWise</title>
+      </Head>
       <LogoContainer>
         <Image src={Logo} alt="Logo" />
       </LogoContainer>

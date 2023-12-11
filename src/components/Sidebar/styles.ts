@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
 export const Container = styled.aside`
-  background-color: ${(props) => props.theme.colors.gray700};
+  width: 234px;
+  height: calc(100% - 40px);
 
-  position: fixed;
-  top: ${(props) => props.theme.size.xl};
-  left: ${(props) => props.theme.size.xl};
-  bottom: ${(props) => props.theme.size.xl};
+  background-color: ${(props) => props.theme.colors.gray700};
 
   border-radius: 12px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 2.5rem 3.25rem;
+  margin: 20px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 40px;
+  padding-bottom: 24px;
 `
 
 export const LogoContainer = styled.div`
