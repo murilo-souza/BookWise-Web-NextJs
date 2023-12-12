@@ -43,6 +43,7 @@ export const Container = styled(Link)<LinkProps>`
 
       &:hover {
         background: '#E6E8F20A';
+        cursor: pointer;
       }
     `}
 
@@ -53,6 +54,7 @@ export const Container = styled(Link)<LinkProps>`
 
       &:hover {
         background: '#8381D90F';
+        cursor: pointer;
       }
     `}
 `

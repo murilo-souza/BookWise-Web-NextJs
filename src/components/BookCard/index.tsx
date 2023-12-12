@@ -9,6 +9,7 @@ import {
 } from './styles'
 import { Book } from '@prisma/client'
 import { RatingStars } from '../RatingStars'
+import { RatingsDialog } from '../RatingsDialog'
 
 export type BookWithAvgRoting = Book & {
   avgRating: number
@@ -36,22 +37,24 @@ export function BookCard({ book, size = 'md' }: BookCardProps) {
   const currentSize = IMAGE_SIZES[size]
 
   return (
-    <Container>
-      {book?.alreadyRead && <ReadBadge>LIDO</ReadBadge>}
-      <BookImage
-        width={currentSize.width}
-        height={currentSize.height}
-        alt={book.name}
-        src={book.cover_url}
-        style={{ minWidth: currentSize.width }}
-      />
-      <BookDetails>
-        <div>
-          <BookName>{book.name}</BookName>
-          <Author>{book.author}</Author>
-        </div>
-        <RatingStars rating={book.avgRating} />
-      </BookDetails>
-    </Container>
+    <RatingsDialog bookId={book?.id}>
+      <Container>
+        {book?.alreadyRead && <ReadBadge>LIDO</ReadBadge>}
+        <BookImage
+          width={currentSize.width}
+          height={currentSize.height}
+          alt={book.name}
+          src={book.cover_url}
+          style={{ minWidth: currentSize.width }}
+        />
+        <BookDetails>
+          <div>
+            <BookName>{book.name}</BookName>
+            <Author>{book.author}</Author>
+          </div>
+          <RatingStars rating={book.avgRating} />
+        </BookDetails>
+      </Container>
+    </RatingsDialog>
   )
 }
