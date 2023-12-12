@@ -1,33 +1,44 @@
 import React from 'react'
-import { Container, LogoContainer, SignInButton } from './styles'
+import {
+  Container,
+  LogoContainer,
+  Profile,
+  ProfileName,
+  SignInButton,
+} from './styles'
 import Image from 'next/image'
 import LogoSVG from '../../assets/logo.svg'
-import { ChartLineUp, Binoculars, SignIn, User } from '@phosphor-icons/react'
-
-import { ActiveLink } from '../ActiveLink'
+import { SignIn, SignOut } from '@phosphor-icons/react'
+import { Navigation } from '../Navigation'
+import { signOut, useSession } from 'next-auth/react'
+import { Avatar } from '../ui/Avatar'
 
 export function Sidebar() {
+  const { data: session } = useSession()
+
+  const user = session?.user
+
   return (
     <Container>
-      <LogoContainer>
-        <Image src={LogoSVG} alt="Logo" />
-      </LogoContainer>
-
-      <ActiveLink href="/home">
-        <ChartLineUp size={24} />
-        Inicio
-      </ActiveLink>
-      <ActiveLink href="/explore">
-        <Binoculars size={24} />
-        Explorar
-      </ActiveLink>
-      <ActiveLink href="/profile">
-        <User size={24} />
-        Perfil
-      </ActiveLink>
-      <SignInButton>
-        Fazer login <SignIn size={20} />
-      </SignInButton>
+      <div>
+        <LogoContainer>
+          <Image src={LogoSVG} alt="Logo" />
+        </LogoContainer>
+        <Navigation />
+      </div>
+      <footer>
+        {!user ? (
+          <SignInButton href="/login">
+            Fazer login <SignIn size={20} />
+          </SignInButton>
+        ) : (
+          <Profile>
+            <Avatar AvatarSize="sm" src={user?.avatar_url} alt={user?.name} />
+            <ProfileName>{user?.name}</ProfileName>
+            <SignOut color="#F75A68" size={20} onClick={() => signOut()} />
+          </Profile>
+        )}
+      </footer>
     </Container>
   )
 }

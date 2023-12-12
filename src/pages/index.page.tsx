@@ -1,6 +1,13 @@
-import Home from './home/index.page'
-import { Login } from './login'
+import { DefaultLayout } from '@/layouts/DefaultLayout'
+import { Home } from './home'
+import { NextPageWithLayout } from './_app.page'
 
-export default function Landing() {
-  return <Login />
+const Homepage: NextPageWithLayout = () => {
+  return <Home />
 }
+
+Homepage.getLayout = (page) => {
+  return <DefaultLayout title="Inicio">{page}</DefaultLayout>
+}
+
+export default Homepage

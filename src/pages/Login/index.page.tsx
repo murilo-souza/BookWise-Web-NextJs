@@ -20,7 +20,7 @@ type AuthButtonsProps = {
   callbackUrl?: string
 }
 
-export function Login({ callbackUrl = '/home' }: AuthButtonsProps) {
+export default function Login({ callbackUrl = '/' }: AuthButtonsProps) {
   const router = useRouter()
 
   const handleSignin = (provider?: string) => {
