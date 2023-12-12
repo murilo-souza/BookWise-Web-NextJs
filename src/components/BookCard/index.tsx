@@ -1,14 +1,23 @@
 import React from 'react'
-import { Author, BookDetails, BookImage, BookName, Container } from './styles'
+import {
+  Author,
+  BookDetails,
+  BookImage,
+  BookName,
+  Container,
+  ReadBadge,
+} from './styles'
 import { Book } from '@prisma/client'
 import { RatingStars } from '../RatingStars'
 
 export type BookWithAvgRoting = Book & {
   avgRating: number
+  alreadyRead: boolean
 }
 
 type BookCardProps = {
   book: BookWithAvgRoting
+
   size?: 'md' | 'lg'
 }
 
@@ -28,6 +37,7 @@ export function BookCard({ book, size = 'md' }: BookCardProps) {
 
   return (
     <Container>
+      {book?.alreadyRead && <ReadBadge>LIDO</ReadBadge>}
       <BookImage
         width={currentSize.width}
         height={currentSize.height}

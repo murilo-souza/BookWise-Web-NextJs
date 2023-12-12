@@ -11,12 +11,15 @@ export const Container = styled.div`
   background: ${(props) => props.theme.colors.gray700};
 
   border-radius: 8px;
+  border: 1px solid ${(props) => props.theme.colors.gray700};
 
   cursor: pointer;
 
-  border: 1px solid ${(props) => props.theme.colors.gray700};
-
   transition: 0.2s;
+
+  position: relative;
+
+  overflow: hidden;
 
   &:hover {
     border-color: ${(props) => props.theme.colors.gray600};
@@ -56,4 +59,18 @@ export const Author = styled.span`
   line-height: 1.4;
 
   color: ${(props) => props.theme.colors.gray400};
+`
+export const ReadBadge = styled.span`
+  position: absolute;
+  display: block;
+  background: #0a313c;
+  top: 0;
+  right: 0;
+
+  color: ${(props) => props.theme.colors.gray100};
+
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0px 4px 0px 4px;
 `
