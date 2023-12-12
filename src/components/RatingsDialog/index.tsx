@@ -103,7 +103,7 @@ export function RatingsDialog({ children, bookId }: RatingsDialogProps) {
                   />
                 </BookInfos>
               </BookDetailsWrapper>
-              <BookRatings ratings={book.ratings} />
+              <BookRatings bookId={bookId} ratings={book.ratings} />
             </>
           )}
         </DialogContent>

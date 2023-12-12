@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, TitleSection } from './styles'
 import { Link } from '../ui/Link'
 import { RatingWithAuthor, UserRatingCard } from '../UserRatingCard'
-import { RatingStars } from '../RatingStars'
+import { RatingForm } from '../ui/Form/RatingForm'
 
 type BookRatingsProps = {
   ratings: RatingWithAuthor[]
+  bookId: string
 }
 
-export function BookRatings({ ratings }: BookRatingsProps) {
+export function BookRatings({ ratings, bookId }: BookRatingsProps) {
+  const [showForm, setShowForm] = useState(false)
+
   function handleRate() {
-    console.log('ndjw')
+    setShowForm(true)
   }
+
+  const sortedRatingsByDate = ratings.sort((a, b) => {
+    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  })
   return (
     <Container>
       <header>
@@ -19,7 +26,10 @@ export function BookRatings({ ratings }: BookRatingsProps) {
         <Link text="Avaliar" withoutIcon onClick={handleRate} />
       </header>
       <section>
-        {ratings.map((rating) => (
+        {showForm && (
+          <RatingForm bookId={bookId} onCancel={() => setShowForm(false)} />
+        )}
+        {sortedRatingsByDate.map((rating) => (
           <UserRatingCard key={rating.id} rating={rating} />
         ))}
       </section>
