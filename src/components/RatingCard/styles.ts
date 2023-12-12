@@ -50,9 +50,9 @@ export const BookDetails = styled.div`
 `
 
 export const BookImage = styled(Image)`
-  min-width: 108;
+  min-width: 108px;
   object-fit: cover;
-  transition: '0.2s';
+  transition: 0.2s;
 
   &:hover {
     filter: brightness(1.2);

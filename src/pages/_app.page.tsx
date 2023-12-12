@@ -1,5 +1,7 @@
+import { queryClient } from '@/lib/react-query'
 import { GlobalStyles } from '@/styles/global'
 import { theme } from '@/styles/theme'
+import { QueryClientProvider } from '@tanstack/react-query'
 import { NextPage } from 'next'
 import { SessionProvider } from 'next-auth/react'
 import { AppProps } from 'next/app'
@@ -22,11 +24,13 @@ export default function App({
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <SessionProvider session={session}>
-      <ThemeProvider theme={theme}>
-        {getLayout(<Component {...pageProps} />)}
-        <GlobalStyles />
-      </ThemeProvider>
-    </SessionProvider>
+    <QueryClientProvider client={queryClient}>
+      <SessionProvider session={session}>
+        <ThemeProvider theme={theme}>
+          {getLayout(<Component {...pageProps} />)}
+          <GlobalStyles />
+        </ThemeProvider>
+      </SessionProvider>
+    </QueryClientProvider>
   )
 }

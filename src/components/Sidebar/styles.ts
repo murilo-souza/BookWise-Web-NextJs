@@ -71,7 +71,7 @@ export const Profile = styled.div`
   }
 `
 export const ProfileName = styled.p`
-  max-width: 100;
+  max-width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
