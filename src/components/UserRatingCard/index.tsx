@@ -30,7 +30,7 @@ export function UserRatingCard({ rating }: UserRatingCardProps) {
     <Container variant={isOwner ? 'highlight' : 'primary'}>
       <UserDetails>
         <section>
-          <Link href={`/profile/${rating.id}`}>
+          <Link href={`/profile/${rating.user_id}`}>
             <Avatar
               alt={rating.user.name}
               src={rating.user.avatar_url!}

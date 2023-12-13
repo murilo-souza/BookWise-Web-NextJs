@@ -10,6 +10,8 @@ export const InputContainer = styled.div<Props>`
   display: flex;
   align-items: center;
 
+  margin-top: 20px;
+
   height: 48px;
   border-radius: 4px;
   gap: 1.25rem;

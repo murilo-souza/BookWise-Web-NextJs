@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useRouter } from 'next/router'
 import { api } from '@/lib/axios'
 import { useSession } from 'next-auth/react'
+import { ProfileDetails } from '@/components/ProfileDetails'
 
 export type ProfileData = {
   user: {
@@ -45,6 +46,7 @@ const ProfilePage: NextPageWithLayout = () => {
             isOwnProfile={isOwnProfile}
             ratings={profile.ratings}
           />
+          <ProfileDetails profile={profile} />
         </>
       ) : (
         <h1>Carregando...</h1>
