@@ -33,7 +33,7 @@ export function Sidebar() {
           </SignInButton>
         ) : (
           <Profile>
-            <Avatar AvatarSize="sm" src={user?.avatar_url} alt={user?.name} />
+            <Avatar size="sm" src={user?.avatar_url} alt={user?.name} />
             <ProfileName>{user?.name}</ProfileName>
             <SignOut color="#F75A68" size={20} onClick={() => signOut()} />
           </Profile>

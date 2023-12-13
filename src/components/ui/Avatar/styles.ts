@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled, { css } from 'styled-components'
 interface AvatarProps {
-  AvatarSize: 'sm' | 'md' | 'lg'
+  size: 'sm' | 'md' | 'lg'
 }
 
 export const Container = styled.div<AvatarProps>`
@@ -9,24 +9,24 @@ export const Container = styled.div<AvatarProps>`
   background: linear-gradient(180deg, #7fd1cc 0%, #9694f5 100%);
   padding: 1px;
 
-  ${({ AvatarSize }) =>
-    AvatarSize === 'sm' &&
+  ${({ size }) =>
+    size === 'sm' &&
     css`
       width: 32px;
       min-width: 32px;
       height: 32px;
     `}
 
-  ${({ AvatarSize }) =>
-    AvatarSize === 'md' &&
+  ${({ size }) =>
+    size === 'md' &&
     css`
       width: 40px;
       min-width: 40px;
       height: 40px;
     `}
 
-  ${({ AvatarSize }) =>
-    AvatarSize === 'lg' &&
+  ${({ size }) =>
+    size === 'lg' &&
     css`
       width: 72px;
       min-width: 72px;

@@ -34,7 +34,7 @@ export function UserRatingCard({ rating }: UserRatingCardProps) {
             <Avatar
               alt={rating.user.name}
               src={rating.user.avatar_url!}
-              AvatarSize="md"
+              size="md"
             />
           </Link>
           <div>

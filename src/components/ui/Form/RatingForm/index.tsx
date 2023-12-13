@@ -58,7 +58,7 @@ export function RatingForm({ onCancel, bookId }: RatingFormProps) {
       {user && (
         <UserDetails>
           <section>
-            <Avatar alt={user.name} src={user.avatar_url} AvatarSize="md" />
+            <Avatar alt={user.name} src={user.avatar_url} size="md" />
             <ProfileName>{user.name}</ProfileName>
           </section>
           <RatingStars

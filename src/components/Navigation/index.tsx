@@ -40,7 +40,7 @@ export function Navigation() {
         <NavItemContainer
           href={href}
           key={label}
-          isactive={router.asPath === href}
+          isActive={router.asPath === href}
         >
           {icon}
           {label}

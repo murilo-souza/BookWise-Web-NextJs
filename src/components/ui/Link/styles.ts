@@ -19,6 +19,8 @@ export const Container = styled(Link)<LinkProps>`
   background: transparent;
   border: none;
 
+  width: 75px;
+
   svg {
     width: 20px;
     height: 20px;

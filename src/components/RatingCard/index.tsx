@@ -43,7 +43,7 @@ export function RatingCard({ rating }: RatingCardProps) {
             <Avatar
               src={rating.user.avatar_url!}
               alt={rating.user.name}
-              AvatarSize="md"
+              size="md"
             />
           </Link>
           <div>

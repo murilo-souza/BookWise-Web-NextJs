@@ -83,7 +83,7 @@ const ExplorePage: NextPageWithLayout = () => {
 }
 
 ExplorePage.getLayout = (page) => {
-  return <DefaultLayout title="Inicio">{page}</DefaultLayout>
+  return <DefaultLayout title="Explorar">{page}</DefaultLayout>
 }
 
 export default ExplorePage

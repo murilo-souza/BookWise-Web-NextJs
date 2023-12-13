@@ -3,11 +3,12 @@ import { InputContainer } from './styles'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   icon?: ReactNode
+  Vsize?: 'md' | 'lg'
 }
 
-export function Input({ icon, ...rest }: InputProps) {
+export function Input({ icon, Vsize = 'md', ...rest }: InputProps) {
   return (
-    <InputContainer>
+    <InputContainer Vsize={Vsize}>
       <input {...rest} />
       {icon}
     </InputContainer>

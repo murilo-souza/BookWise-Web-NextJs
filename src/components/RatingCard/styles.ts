@@ -80,6 +80,7 @@ export const Author = styled.span`
 
   color: ${(props) => props.theme.colors.gray400};
 `
+
 export const Description = styled.p`
   font-size: 0.875rem;
   font-weight: 400;
