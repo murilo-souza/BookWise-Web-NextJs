@@ -29,3 +29,16 @@ export const RatingSections = styled.section`
 
   margin-top: 1rem;
 `
+export const LatestContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+`

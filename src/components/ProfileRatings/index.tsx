@@ -41,6 +41,7 @@ export function ProfileRatings({ ratings, isOwnProfile }: ProfileRatingsProps) {
           side="left"
           variantColor="white"
           style={{ alignSelf: 'flex-start' }}
+          txtContainer="short"
         />
       )}
 

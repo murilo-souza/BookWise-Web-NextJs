@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 interface LinkProps {
   side: 'left' | 'right'
   variantColor: 'white' | 'purple'
+  txtContainer: 'long' | 'short'
 }
 
 export const Container = styled(Link)<LinkProps>`
@@ -19,7 +20,16 @@ export const Container = styled(Link)<LinkProps>`
   background: transparent;
   border: none;
 
-  width: 75px;
+  ${({ txtContainer }) =>
+    txtContainer === 'long' &&
+    css`
+      width: 105px;
+    `}
+  ${({ txtContainer }) =>
+    txtContainer === 'short' &&
+    css`
+      width: 70px;
+    `}
 
   svg {
     width: 20px;

@@ -4,6 +4,7 @@ import {
   BookContent,
   BookDetails,
   BookImage,
+  CompactDetails,
   Container,
   Description,
   Profile,
@@ -25,9 +26,10 @@ export type RatingWithAuthorAndBook = Rating & {
 
 type RatingCardProps = {
   rating: RatingWithAuthorAndBook
+  variant?: 'default' | 'compact'
 }
 
-export function RatingCard({ rating }: RatingCardProps) {
+export function RatingCard({ rating, variant = 'default' }: RatingCardProps) {
   const distance = getRelativeTimeString(new Date(rating.created_at), 'pt-BR')
 
   const { text, isShowingMore, toogleShowMore } = useToogleShowMore(
@@ -36,23 +38,25 @@ export function RatingCard({ rating }: RatingCardProps) {
   )
 
   return (
-    <Container>
-      <Profile>
-        <section>
-          <Link href={`/profile/${rating.user_id}`}>
-            <Avatar
-              src={rating.user.avatar_url!}
-              alt={rating.user.name}
-              size="md"
-            />
-          </Link>
-          <div>
-            <ProfileName>{rating.user.name}</ProfileName>
-            <Time>{distance}</Time>
-          </div>
-        </section>
-        <RatingStars rating={rating.rate} />
-      </Profile>
+    <Container variant={variant}>
+      {variant === 'default' && (
+        <Profile>
+          <section>
+            <Link href={`/profile/${rating.user_id}`}>
+              <Avatar
+                src={rating.user.avatar_url!}
+                alt={rating.user.name}
+                size="md"
+              />
+            </Link>
+            <div>
+              <ProfileName>{rating.user.name}</ProfileName>
+              <Time>{distance}</Time>
+            </div>
+          </section>
+          <RatingStars rating={rating.rate} />
+        </Profile>
+      )}
       <BookDetails>
         <Link href={`/explore?book=${rating.book_id}`}>
           <BookImage
@@ -64,6 +68,12 @@ export function RatingCard({ rating }: RatingCardProps) {
         </Link>
         <BookContent>
           <div>
+            {variant === 'compact' && (
+              <CompactDetails>
+                <Time>{distance}</Time>
+                <RatingStars rating={rating.rate} />
+              </CompactDetails>
+            )}
             <Title>{rating.book.name}</Title>
             <Author>{rating.book.author}</Author>
           </div>

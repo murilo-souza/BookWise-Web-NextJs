@@ -1,7 +1,11 @@
 import Image from 'next/image'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
+interface RatingProps {
+  variant: 'default' | 'compact'
+}
+
+export const Container = styled.div<RatingProps>`
   display: flex;
   flex-direction: column;
 
@@ -11,7 +15,25 @@ export const Container = styled.div`
 
   padding: 1.25rem;
 
-  background: ${(props) => props.theme.colors.gray700};
+  ${({ variant }) =>
+    variant === 'default' &&
+    css`
+      background: ${(props) => props.theme.colors.gray700};
+    `}
+  ${({ variant }) =>
+    variant === 'compact' &&
+    css`
+      background: ${(props) => props.theme.colors.gray600};
+    `}
+`
+
+export const CompactDetails = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0.75rem;
 `
 
 export const Profile = styled.div`

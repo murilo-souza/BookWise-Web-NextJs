@@ -9,6 +9,7 @@ type LinkProps = Omit<any, 'href'> & {
   withoutIcon?: boolean
   side?: 'left' | 'right'
   variantColor?: 'white' | 'purple'
+  txtContainer?: 'long' | 'short'
 }
 
 export function Link({
@@ -18,6 +19,7 @@ export function Link({
   withoutIcon,
   side = 'right',
   variantColor = 'purple',
+  txtContainer = 'long',
 }: LinkProps) {
   return (
     <Container
@@ -26,6 +28,7 @@ export function Link({
       href={href!}
       as={onClick ? 'button' : undefined}
       onClick={onClick}
+      txtContainer={txtContainer}
     >
       {text}
       {!withoutIcon && (side === 'right' ? <CaretRight /> : <CaretLeft />)}
