@@ -27,5 +27,3 @@
   <li>Comment about the book</li>
 </ul>
 
-<h3>🚧 Em desenvolvimento 🚧</h3>
-
